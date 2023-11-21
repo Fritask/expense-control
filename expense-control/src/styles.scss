@@ -1,0 +1,44 @@
+/* You can add global styles to this file, and also import other style files */
+@import './app/shared/styles/variables.scss';
+@import './app/shared/styles/spacing.scss';
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: $dark-text;   
+    background-color: $color-off-white;
+}
+
+p {
+    margin: 0;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.card {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 16px;
+    border-radius: 12px;
+    box-shadow: 0px 0 12px -4px $color-pewter;
+}
+
+.card-description {
+    color: $color-pewter;
+    font-size: 14px;
+}
+
+.card-big-number {
+    font-weight: bold;
+    font-size: 28px;
+}
+
+// spacing
+// .mb-1 {}

@@ -1,0 +1,44 @@
+@mixin generateSingleProp($prefix, $property) {
+    $sizes: (0, 1, 2, 3, 4, 5, 6, 7, 8);
+    $spacing: 4px;
+
+    @for $i from 1 through length($sizes) {
+        $size: nth($sizes, $i);
+
+        .#{$prefix}-#{$i - 1} {
+            #{$property}: $spacing * $size;
+        }
+    }
+}
+
+@mixin generateTwoProps($prefix, $property1, $property2) {
+    $sizes: (0, 1, 2, 3, 4, 5, 6, 7, 8);
+    $spacing: 4px;
+
+    @for $i from 1 through length($sizes) {
+        $size: nth($sizes, $i);
+
+        .#{$prefix}-#{$i - 1} {
+            #{$property1}: $spacing * $size;
+            #{$property2}: $spacing * $size;
+        }
+    }
+}
+
+// margins
+@include generateSingleProp(mt, margin-top);
+@include generateSingleProp(mr, margin-right);
+@include generateSingleProp(mb, margin-bottom);
+@include generateSingleProp(ml, margin-left);
+
+@include generateTwoProps(mv, margin-top, margin-bottom);
+@include generateTwoProps(mh, margin-right, margin-left);
+
+// paddings
+@include generateSingleProp(pt, padding-top);
+@include generateSingleProp(pr, padding-right);
+@include generateSingleProp(pb, padding-bottom);
+@include generateSingleProp(pl, padding-left);
+
+@include generateTwoProps(pv, padding-top, padding-bottom);
+@include generateTwoProps(ph, padding-right, padding-left);
