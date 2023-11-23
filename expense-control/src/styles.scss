@@ -1,44 +1,58 @@
 /* You can add global styles to this file, and also import other style files */
 @import './app/shared/styles/variables.scss';
 @import './app/shared/styles/spacing.scss';
-
-html,
-body {
-    height: 100%;
-}
+@import './app/shared/styles/typography.scss';
 
 body {
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: $dark-text;   
-    background-color: $color-off-white;
+	margin: 0;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	color: $color-jetblack;
+	background-color: $color-off-white;
 }
 
-p {
-    margin: 0;
+// removing default margin from texts
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+b,
+strong,
+i,
+em,
+mark,
+small,
+del,
+ins,
+sub,
+sup {
+	margin: 0;
 }
 
 .bold {
-    font-weight: bold;
+	font-weight: bold;
 }
 
 .card {
-    width: 100%;
-    box-sizing: border-box;
-    padding: 16px;
-    border-radius: 12px;
-    box-shadow: 0px 0 12px -4px $color-pewter;
+	width: 100%;
+	box-sizing: border-box;
+	padding: 16px;
+	border-radius: 12px;
+	box-shadow: 0px 0 12px -4px $color-pewter;
 }
 
 .card-description {
-    color: $color-pewter;
-    font-size: 14px;
+	color: $color-pewter;
+	font-size: 14px;
 }
 
-.card-big-number {
-    font-weight: bold;
-    font-size: 28px;
+.text-light {
+	color: $color-pewter;
+
 }
 
-// spacing
-// .mb-1 {}
+// .big-number {
+// 	font-size: 28px;
+// 	font-weight: bold;
+// }

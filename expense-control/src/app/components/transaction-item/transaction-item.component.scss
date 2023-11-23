@@ -1,0 +1,25 @@
+@import '../../shared/styles/variables.scss';
+
+.transaction-container {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid $color-platinum;
+}
+
+.category-icon {
+    padding: 12px 14px;
+    border-radius: 20px;
+    background-color: rgba($color-gray, .3);
+    color: $color-gray;
+}
+
+.transaction-value {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.cashback {
+    // color: #32CD32;
+    color: #0BDA51;
+}

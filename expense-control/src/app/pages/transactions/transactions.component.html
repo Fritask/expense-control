@@ -1,1 +1,12 @@
-<p>transactions works!</p>
+<div class="mb-6">
+	<app-budget-card></app-budget-card>
+</div>
+
+<h3 class="mb-6">Transactions list</h3>
+
+<div class="transactions-container">
+	<app-transaction-item
+		*ngFor="let transaction of transactions"
+		[transaction]="transaction"
+	></app-transaction-item>
+</div>

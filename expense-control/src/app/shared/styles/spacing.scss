@@ -25,6 +25,12 @@
     }
 }
 
+@mixin generateMarginAuto($prefix, $property) {
+    .#{$prefix} {
+        #{$property}: auto;
+    }
+}
+
 // margins
 @include generateSingleProp(mt, margin-top);
 @include generateSingleProp(mr, margin-right);
@@ -33,6 +39,11 @@
 
 @include generateTwoProps(mv, margin-top, margin-bottom);
 @include generateTwoProps(mh, margin-right, margin-left);
+
+@include generateMarginAuto(mt-auto, margin-top);
+@include generateMarginAuto(mr-auto, margin-right);
+@include generateMarginAuto(mb-auto, margin-bottom);
+@include generateMarginAuto(ml-auto, margin-left);
 
 // paddings
 @include generateSingleProp(pt, padding-top);

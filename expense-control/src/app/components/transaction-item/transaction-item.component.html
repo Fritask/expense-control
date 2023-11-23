@@ -1,0 +1,22 @@
+<div class="transaction-container pb-4">
+	<div [ngStyle]="setIconStyle()" class="category-icon">
+		<mat-icon>{{ getCategoryIcon() }}</mat-icon>
+	</div>
+
+	<div class="ml-3">
+		<p class="bold">{{ transaction?.description }}</p>
+		<p class="text-sm">{{ transaction?.date | date : 'dd/MM/yyyy' }}</p>
+	</div>
+
+	<div class="transaction-value ml-auto">
+		<p class="text-lg bold">
+			{{ transaction?.total_value | currency : 'BRL' }}
+		</p>
+		
+		<ng-container *ngIf="transaction?.cashback; else empty">
+			<p class="text-sm bold cashback"><span>+</span> {{ transaction?.cashback | currency : 'BRL' }}</p>
+		</ng-container>
+
+		<ng-template #empty><p>&nbsp;</p></ng-template>
+	</div>
+</div>
