@@ -45,12 +45,12 @@ export class BottomNavigationComponent implements OnInit {
     constructor(private _router: Router) {}
 
     ngOnInit(): void {
-        this.selectedItem = this.navItems[0];
+        this.selectedItem = this.navItems[2];
     }
 
     selectItem(navItem: INavItem) {
         this.selectedItem = navItem;
 
-		this._router.navigate([navItem.url])
+		this._router.navigate([navItem.url], { skipLocationChange: true })
     }
 }

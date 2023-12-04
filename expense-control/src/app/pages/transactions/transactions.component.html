@@ -1,12 +1,57 @@
 <div class="mb-6">
-	<app-budget-card></app-budget-card>
+	<app-budget-card
+		[totalSpent]="totalSpentMain + totalSpentMonthly"
+	></app-budget-card>
 </div>
 
-<h3 class="mb-6">Transactions list</h3>
+<div class="transactions-type mb-4">
+	<div
+		(click)="mainTransactionsVisible = !mainTransactionsVisible"
+		class="expansible-container"
+	>
+		<h3>day to day transactions</h3>
+		<mat-icon
+			class="rotating-icon"
+			[class.rotated]="!mainTransactionsVisible"
+			>keyboard_arrow_up</mat-icon
+		>
+	</div>
 
-<div class="transactions-container">
-	<app-transaction-item
-		*ngFor="let transaction of transactions"
-		[transaction]="transaction"
-	></app-transaction-item>
+	<div
+		*ngIf="mainTransactionsVisible"
+		[@fadeInOut]
+		class="transaction-items-container mt-7"
+	>
+		<app-transaction-item
+			[last]="i === mainTransactions.length - 1"
+			*ngFor="let transaction of mainTransactions; index as i"
+			[transaction]="transaction"
+		></app-transaction-item>
+	</div>
+</div>
+
+<div class="transactions-type">
+	<div
+		(click)="monthlyTransactionsVisible = !monthlyTransactionsVisible"
+		class="expansible-container"
+	>
+		<h3>monthly transactions</h3>
+		<mat-icon
+			class="rotating-icon"
+			[class.rotated]="!monthlyTransactionsVisible"
+			>keyboard_arrow_up</mat-icon
+		>
+	</div>
+
+	<div
+		*ngIf="monthlyTransactionsVisible"
+		[@fadeInOut]
+		class="transaction-items-container mt-7"
+	>
+		<app-transaction-item
+			[last]="i === monthlyTransactions.length - 1"
+			*ngFor="let transaction of monthlyTransactions; index as i"
+			[transaction]="transaction"
+		></app-transaction-item>
+	</div>
 </div>

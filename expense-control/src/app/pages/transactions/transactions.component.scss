@@ -1,4 +1,26 @@
-.transactions-container {
+@import '../../../styles.scss';
+
+.transactions-type {
+    padding-bottom: 16px;
+    border-bottom: 1px solid $color-jetblack;
+}
+
+.expansible-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.rotating-icon {
+    transition: transform .2s ease;
+}
+
+.rotated {
+    transform: rotate(180deg);
+}
+
+.transaction-items-container {
     display: flex;
     flex-direction: column;
     gap: 12px;

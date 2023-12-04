@@ -1,3 +1,4 @@
+// text size
 .text-xxs {
 	font-size: 8px;
 }
@@ -14,6 +15,10 @@
 	font-size: 16px;
 }
 
+.text-mlg {
+	font-size: 18px;
+}
+
 .text-lg {
 	font-size: 20px;
 }
@@ -24,4 +29,17 @@
 
 .text-xxl {
 	font-size: 28px;
+}
+
+// text formatting
+.bold {
+	font-weight: 600;
+}
+
+.bolder {
+    font-weight: 700;
+}
+
+.boldest {
+    font-weight: 900;
 }

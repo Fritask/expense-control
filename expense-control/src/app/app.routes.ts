@@ -5,8 +5,7 @@ import { TransactionsComponent } from './pages/transactions/transactions.compone
 export const routes: Routes = [
     {
         path: '',
-        redirectTo: '/home',
-        pathMatch: 'full',
+        component: TransactionsComponent,
     },
     {
         path: 'home',
@@ -15,5 +14,9 @@ export const routes: Routes = [
     {
         path: 'transactions',
         component: TransactionsComponent,
+    },
+    {
+        path: '**',
+        redirectTo: '',
     },
 ];

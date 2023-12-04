@@ -5,7 +5,6 @@ import {
 	CategoryIcons,
 	CategoryColors,
 } from '../../shared/enums/category-settings';
-import { Categories } from '../../shared/enums/categories';
 import { ITransaction } from '../../shared/interfaces/transaction.interface';
 
 @Component({
@@ -17,6 +16,7 @@ import { ITransaction } from '../../shared/interfaces/transaction.interface';
 })
 export class TransactionItemComponent {
 	@Input() transaction?: ITransaction;
+	@Input() last?: boolean;
 
 	getCategoryIcon() {
 		return this.transaction

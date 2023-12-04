@@ -1,4 +1,13 @@
 export enum Categories {
-    food = 'food',
-    transport = 'transport'
+	clothing = 'clothing',
+	entertainment = 'entertainment',
+	food = 'food',
+	house = 'house',
+	leisure = 'leisure',
+	market = 'market',
+	pets = 'pets',
+	pharmacy = 'pharmacy',
+	transport = 'transport',
+	travel = 'travel',
+	utilities = 'utilities',
 }

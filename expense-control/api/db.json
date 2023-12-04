@@ -122,6 +122,17 @@
 				"monthly": false,
 				"paid": false,
 				"in_installments": false
+			},
+			{
+				"description": "Cléo",
+				"total_value": 130,
+				"date": "2023-12-12",
+				"category": "house",
+				"source": "inter",
+				"payment_method": "pix",
+				"monthly": true,
+				"paid": false,
+				"in_installments": false
 			}
 		]
 	}
