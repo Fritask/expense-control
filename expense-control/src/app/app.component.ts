@@ -1,8 +1,9 @@
-import { Component, LOCALE_ID } from '@angular/core';
+import { Component, LOCALE_ID, OnInit } from '@angular/core';
 import { CommonModule, registerLocaleData } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { BottomNavigationComponent } from './components/bottom-navigation/bottom-navigation.component';
 import localePt from '@angular/common/locales/pt';
+import { TransactionService } from './shared/services/transaction.service';
 
 registerLocaleData(localePt);
 
@@ -15,10 +16,16 @@ registerLocaleData(localePt);
 	providers: [
 		{
 			provide: LOCALE_ID,
-			useValue: 'pt-BR'
-		}
+			useValue: 'pt-BR',
+		},
 	],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
 	title = 'expense-control';
+
+	constructor(private _transaction: TransactionService) {}
+
+	ngOnInit(): void {
+		this._transaction.arrangeTransactions();
+	}
 }

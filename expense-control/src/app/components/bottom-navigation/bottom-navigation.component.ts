@@ -16,27 +16,27 @@ export class BottomNavigationComponent implements OnInit {
         {
             icon: 'home',
             text: 'Home',
-            url: '/home',
+            path: '/home',
         },
         {
             icon: 'bar_chart',
             text: 'Graph',
-            url: '/graph',
+            path: '/graph',
         },
         {
             icon: 'swap_horiz',
             text: 'Transactions',
-            url: '/transactions',
+            path: '/transactions',
         },
         {
             icon: 'view_module',
             text: 'Category',
-            url: '/category',
+            path: '/categories',
         },
         {
             icon: 'settings',
             text: 'Settings',
-            url: '/settings',
+            path: '/settings',
         },
     ];
 
@@ -51,6 +51,6 @@ export class BottomNavigationComponent implements OnInit {
     selectItem(navItem: INavItem) {
         this.selectedItem = navItem;
 
-		this._router.navigate([navItem.url], { skipLocationChange: true })
+		this._router.navigate([navItem.path], { skipLocationChange: true })
     }
 }

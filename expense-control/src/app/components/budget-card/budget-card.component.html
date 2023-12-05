@@ -1,7 +1,7 @@
 <div class="card">
 	<p class="text-light text-sm">remaining budget</p>
 	<p class="text-xxl bolder mb-4">
-        {{ totalBudget - totalSpent | currency: 'BRL' }}
+        {{ remainingBudget | currency: 'BRL' }}
 		<!-- <span class="text-xxl mr-3">{{ totalSpent | currency : 'BRL' }}</span>
 		<span class="text-light">/{{ totalBudget | currency : 'BRL' }}</span> -->
 	</p>
@@ -11,5 +11,5 @@
         <p>{{ totalBudget | currency : 'BRL' }}</p>
     </div>
 
-    <mat-progress-bar color="warn" mode="determinate" [value]="(100 * totalSpent) / totalBudget"></mat-progress-bar>
+    <mat-progress-bar color="warn" mode="determinate" [value]="totalSpentPercentage"></mat-progress-bar>
 </div>

@@ -21,3 +21,9 @@ export interface IInstallment {
     total_amount: number;
     amount_paid: number;
 }
+
+export interface ITotalSpent {
+    total: number;
+    main: number;
+    monthly: number;
+}

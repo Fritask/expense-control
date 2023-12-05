@@ -1,7 +1,5 @@
 <div class="mb-6">
-	<app-budget-card
-		[totalSpent]="totalSpentMain + totalSpentMonthly"
-	></app-budget-card>
+	<app-budget-card></app-budget-card>
 </div>
 
 <div class="transactions-type mb-4">
@@ -9,7 +7,11 @@
 		(click)="mainTransactionsVisible = !mainTransactionsVisible"
 		class="expansible-container"
 	>
-		<h3>day to day transactions</h3>
+		<h3>
+			day to day transactions<span class="text-msm text-light bold"
+				>({{ transaction.totalSpent?.main | currency : 'BRL' }})</span
+			>
+		</h3>
 		<mat-icon
 			class="rotating-icon"
 			[class.rotated]="!mainTransactionsVisible"
@@ -23,9 +25,12 @@
 		class="transaction-items-container mt-7"
 	>
 		<app-transaction-item
-			[last]="i === mainTransactions.length - 1"
-			*ngFor="let transaction of mainTransactions; index as i"
-			[transaction]="transaction"
+			[last]="i === transaction.mainTransactions.length - 1"
+			*ngFor="
+				let mainTransaction of transaction.mainTransactions;
+				index as i
+			"
+			[transaction]="mainTransaction"
 		></app-transaction-item>
 	</div>
 </div>
@@ -35,7 +40,17 @@
 		(click)="monthlyTransactionsVisible = !monthlyTransactionsVisible"
 		class="expansible-container"
 	>
-		<h3>monthly transactions</h3>
+		<div>
+			<h3>
+				monthly transactions
+				<span class="text-msm text-light bold"
+					>({{
+						transaction.totalSpent?.monthly | currency : 'BRL'
+					}})</span
+				>
+			</h3>
+		</div>
+
 		<mat-icon
 			class="rotating-icon"
 			[class.rotated]="!monthlyTransactionsVisible"
@@ -49,9 +64,12 @@
 		class="transaction-items-container mt-7"
 	>
 		<app-transaction-item
-			[last]="i === monthlyTransactions.length - 1"
-			*ngFor="let transaction of monthlyTransactions; index as i"
-			[transaction]="transaction"
+			[last]="i === transaction.monthlyTransactions.length - 1"
+			*ngFor="
+				let monthlyTransaction of transaction.monthlyTransactions;
+				index as i
+			"
+			[transaction]="monthlyTransaction"
 		></app-transaction-item>
 	</div>
 </div>
