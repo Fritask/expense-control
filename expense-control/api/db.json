@@ -47,14 +47,19 @@
 			},
 			{
 				"description": "leisure",
-				"total_value": 34,
+				"total_value": 340,
 				"date": "2023-12-12",
 				"category": "leisure",
 				"source": "inter",
 				"payment_method": "credit",
 				"monthly": false,
 				"paid": false,
-				"in_installments": false
+				"in_installments": true,
+                "installment_info": {
+                    "value": 34,
+                    "total_amount": 10,
+                    "amount_paid": 3
+                }
 			},
 			{
 				"description": "market",

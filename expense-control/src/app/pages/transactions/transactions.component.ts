@@ -4,7 +4,7 @@ import { BudgetCardComponent } from '../../components/budget-card/budget-card.co
 import { MatIconModule } from '@angular/material/icon';
 import { TransactionItemComponent } from '../../components/transaction-item/transaction-item.component';
 import { Animations } from '../../shared/animations/animations';
-import { TransactionService } from '../../shared/services/transaction.service';
+import { TransactionService } from '../../shared/services/transaction/transaction.service';
 
 @Component({
 	selector: 'app-transactions',

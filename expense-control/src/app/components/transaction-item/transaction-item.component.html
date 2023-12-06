@@ -1,20 +1,35 @@
-<div [style.border]="last ? 'none' : ''" [class.pb-4]="!last" class="transaction-container">
-	<div [ngStyle]="setIconStyle()" class="category-icon">
-		<mat-icon>{{ getCategoryIcon() }}</mat-icon>
-	</div>
+<div
+	[style.border]="last ? 'none' : ''"
+	[class.pb-4]="!last"
+	class="transaction-container"
+>
+	<app-category-icon [category]="transaction?.category"></app-category-icon>
 
 	<div class="ml-3 bold">
-		<p class="text-mlg">{{ transaction?.description }}</p>
-		<p class="text-sm text-light">{{ transaction?.date | date : 'dd/MM/yyyy' }}</p>
+		<p class="text-mlg">
+			{{ transaction?.description }}
+			<span class="text-md text-light" *ngIf="transaction?.in_installments">{{
+				setInstallmentText(transaction)
+			}}</span>
+		</p>
+		<p class="text-sm text-light">
+			{{ transaction?.date | date : 'dd/MM/yyyy' }}
+		</p>
 	</div>
 
 	<div class="transaction-value ml-auto bold">
-		<p class="text-lg">
+		<p *ngIf="!transaction?.in_installments" class="text-lg">
 			{{ transaction?.total_value | currency : 'BRL' }}
 		</p>
-		
+
+		<p *ngIf="transaction?.in_installments" class="text-lg">
+			{{ transaction?.installment_info?.value | currency : 'BRL' }}
+		</p>
+
 		<ng-container *ngIf="transaction?.cashback; else empty">
-			<p class="text-sm cashback"><span>+</span> {{ transaction?.cashback | currency : 'BRL' }}</p>
+			<p class="text-sm cashback">
+				<span>+</span> {{ transaction?.cashback | currency : 'BRL' }}
+			</p>
 		</ng-container>
 
 		<ng-template #empty><p>&nbsp;</p></ng-template>

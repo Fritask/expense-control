@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
-import { TransactionService } from '../../shared/services/transaction.service';
+import { TransactionService } from '../../shared/services/transaction/transaction.service';
 
 @Component({
 	selector: 'app-budget-card',
@@ -26,6 +26,5 @@ export class BudgetCardComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		// alert(this.totalSpent);
 	}
 }

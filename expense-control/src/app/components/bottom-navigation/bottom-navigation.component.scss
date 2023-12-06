@@ -1,4 +1,4 @@
-@import '../../shared/styles/variables.scss';
+@import '../../../styles.scss';
 
 .navigation-container {
     width: 100%;
@@ -7,6 +7,7 @@
     justify-content: space-around;
 
     box-shadow: 0px 0 20px -6px $color-pewter;
+    background-color: $color-off-white;
 }
 
 .navigation-item {

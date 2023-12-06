@@ -1,0 +1,7 @@
+<div
+	[ngStyle]="setIconStyle()"
+	class="icon-container"
+>
+	<mat-icon [class.big-icon]="bigIcon">{{ getCategoryIcon() }}</mat-icon>
+	<p class="text-msm" *ngIf="showText">{{ category }}</p>
+</div>

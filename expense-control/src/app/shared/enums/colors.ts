@@ -10,4 +10,5 @@ export enum Colors {
 	lincolnGreen = '#478778',
 	redOrange = '#FF4433',
 	saddleBrown = '#8B4513',
+    gray = '#808080'
 }

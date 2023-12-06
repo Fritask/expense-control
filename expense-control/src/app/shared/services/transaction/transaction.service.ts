@@ -1,7 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { ITotalSpent, ITransaction } from '../interfaces/transaction.interface';
+import {
+	ITotalSpent,
+	ITransaction,
+} from '../../interfaces/transaction.interface';
 
 @Injectable({
 	providedIn: 'root',
@@ -43,6 +46,12 @@ export class TransactionService {
 	setTotalSpent() {
 		const main = this.mainTransactions?.reduce(
 			(accumulator: number, transaction: ITransaction) => {
+				if (
+					transaction.in_installments &&
+					transaction.installment_info?.value
+				)
+					return accumulator + transaction.installment_info?.value;
+
 				return accumulator + transaction.total_value;
 			},
 			0
