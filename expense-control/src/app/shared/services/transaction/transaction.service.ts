@@ -11,6 +11,7 @@ import {
 })
 export class TransactionService {
 	private _mainTransactions: ITransaction[] = [];
+	private _allTransactions: ITransaction[] = [];
 	private _monthlyTransactions: ITransaction[] = [];
 	private _totalSpent?: ITotalSpent;
 
@@ -26,13 +27,18 @@ export class TransactionService {
 		this.getTransactions().subscribe({
 			next: (response) => {
 				if (response.data.length) {
-					this.mainTransactions = response.data.filter(
+					this._mainTransactions = response.data.filter(
 						(item: ITransaction) => item.monthly === false
 					);
 
-					this.monthlyTransactions = response.data.filter(
+					this._monthlyTransactions = response.data.filter(
 						(item: ITransaction) => item.monthly === true
 					);
+
+					this._allTransactions = [
+						...this._mainTransactions,
+						...this._monthlyTransactions,
+					];
 
 					this.setTotalSpent();
 				}
@@ -75,23 +81,27 @@ export class TransactionService {
 		return this._totalSpent;
 	}
 
-	set totalSpent(value: ITotalSpent) {
-		this._totalSpent = value;
-	}
+	// set totalSpent(value: ITotalSpent) {
+	// 	this._totalSpent = value;
+	// }
 
 	get mainTransactions(): ITransaction[] {
 		return this._mainTransactions;
 	}
 
-	set mainTransactions(value: ITransaction[]) {
-		this._mainTransactions = value;
+	get allTransactions(): ITransaction[] {
+		return this._allTransactions;
 	}
+
+	// set mainTransactions(value: ITransaction[]) {
+	// 	this._mainTransactions = value;
+	// }
 
 	get monthlyTransactions(): ITransaction[] {
 		return this._monthlyTransactions;
 	}
 
-	set monthlyTransactions(value: ITransaction[]) {
-		this._monthlyTransactions = value;
-	}
+	// set monthlyTransactions(value: ITransaction[]) {
+	// 	this._monthlyTransactions = value;
+	// }
 }
