@@ -1,8 +1,5 @@
 <div class="card-carousel">
 	<div class="carousel-container">
-        <app-card-info></app-card-info>
-		<div class="card">CARD</div>
-		<div class="card">CARD</div>
-		<div class="card">CARD</div>
+        <app-card-info *ngFor="let _ of [].constructor(3)"></app-card-info>
 	</div>
 </div>

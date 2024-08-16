@@ -21,8 +21,8 @@ export class BottomNavigationComponent implements OnInit {
 		},
 		{
 			icon: 'bar_chart',
-			text: 'Graph',
-			path: '/graph',
+			text: 'Graphs',
+			path: '/graphs',
 		},
 		{
 			icon: 'swap_horiz',
