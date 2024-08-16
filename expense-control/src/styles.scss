@@ -1,0 +1,58 @@
+/* You can add global styles to this file, and also import other style files */
+@import './app/shared/styles/variables.scss';
+@import './app/shared/styles/spacing.scss';
+@import './app/shared/styles/typography.scss';
+
+body {
+	margin: 0;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	color: $color-jetblack;
+	background-color: $color-off-white;
+}
+
+// removing default margin from texts
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+b,
+strong,
+i,
+em,
+mark,
+small,
+del,
+ins,
+sub,
+sup {
+	margin: 0;
+}
+
+.card {
+	width: 100%;
+	box-sizing: border-box;
+	padding: 16px;
+	border-radius: 12px;
+	box-shadow: 0px 0 12px -4px $color-pewter;
+}
+
+.card-description {
+	color: $color-pewter;
+	font-size: 14px;
+}
+
+.text-light {
+	color: $color-pewter;
+
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+// .big-number {
+// 	font-size: 28px;
+// 	font-weight: bold;
+// }

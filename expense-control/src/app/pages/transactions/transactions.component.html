@@ -1,0 +1,76 @@
+<div class="mb-6">
+	<app-budget-card></app-budget-card>
+</div>
+
+<div class="transactions-type mb-4">
+	<div
+		(click)="mainTransactionsVisible = !mainTransactionsVisible"
+		class="expansible-container"
+	>
+		<h3>
+			{{ transaction.mainTransactions.length }} regular transactions<span
+				class="text-msm text-light bold ml-2"
+				>({{ transaction.totalSpent?.main | currency : 'BRL' }})</span
+			>
+		</h3>
+		<mat-icon
+			class="rotating-icon"
+			[class.rotated]="!mainTransactionsVisible"
+			>keyboard_arrow_up</mat-icon
+		>
+	</div>
+
+	<div
+		*ngIf="mainTransactionsVisible"
+		[@fadeInOut]
+		class="transaction-items-container mt-7"
+	>
+		<app-transaction-item
+			[last]="i === transaction.mainTransactions.length - 1"
+			*ngFor="
+				let mainTransaction of transaction.mainTransactions;
+				index as i
+			"
+			[transaction]="mainTransaction"
+		></app-transaction-item>
+	</div>
+</div>
+
+<div class="transactions-type">
+	<div
+		(click)="monthlyTransactionsVisible = !monthlyTransactionsVisible"
+		class="expansible-container"
+	>
+		<div>
+			<h3>
+				{{ transaction.monthlyTransactions.length }} monthly
+				transactions<span class="text-msm text-light bold ml-2"
+					>({{
+						transaction.totalSpent?.monthly | currency : 'BRL'
+					}})</span
+				>
+			</h3>
+		</div>
+
+		<mat-icon
+			class="rotating-icon"
+			[class.rotated]="!monthlyTransactionsVisible"
+			>keyboard_arrow_up</mat-icon
+		>
+	</div>
+
+	<div
+		*ngIf="monthlyTransactionsVisible"
+		[@fadeInOut]
+		class="transaction-items-container mt-7"
+	>
+		<app-transaction-item
+			[last]="i === transaction.monthlyTransactions.length - 1"
+			*ngFor="
+				let monthlyTransaction of transaction.monthlyTransactions;
+				index as i
+			"
+			[transaction]="monthlyTransaction"
+		></app-transaction-item>
+	</div>
+</div>

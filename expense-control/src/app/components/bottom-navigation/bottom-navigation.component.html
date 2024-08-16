@@ -1,0 +1,11 @@
+<div class="navigation-container">
+    <ng-container *ngFor="let navItem of navItems">
+        <div
+            (click)="selectItem(navItem)"
+            [class.selected-item]="navItem === selectedItem"
+            class="navigation-item"
+        >
+            <mat-icon class="navigation-icon">{{ navItem.icon }}</mat-icon>
+        </div>
+    </ng-container>
+</div>

@@ -1,0 +1,15 @@
+<!-- <mat-grid-list cols="3" rowHeight="1:1" gutterSize="24px">
+	<mat-grid-tile *ngFor="let category of categories">
+        <app-category-icon class="icon-component" [category]="category.name" [bigIcon]="true" [showText]="true"></app-category-icon>
+    </mat-grid-tile>
+</mat-grid-list> -->
+
+<div class="categories-grid">
+	<div *ngFor="let category of categories">
+		<app-category-icon
+			[category]="category.name"
+			[bigIcon]="true"
+			[showText]="true"
+		></app-category-icon>
+	</div>
+</div>

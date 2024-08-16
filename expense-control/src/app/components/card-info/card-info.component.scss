@@ -1,0 +1,11 @@
+@import '../../../styles.scss';
+
+.card-info {
+	width: 140px;
+	height: 200px;
+	background-color: $color-jetblack;
+    color: $color-off-white;
+	box-sizing: border-box;
+	padding: 20px 16px;
+    border-radius: 16px;
+}

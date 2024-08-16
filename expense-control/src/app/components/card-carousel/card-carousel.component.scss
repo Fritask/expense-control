@@ -1,0 +1,14 @@
+.card-carousel {
+	max-width: 100%;
+	overflow-x: auto;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.carousel-container {
+	display: flex;
+	gap: 12px;
+    width: fit-content;
+}

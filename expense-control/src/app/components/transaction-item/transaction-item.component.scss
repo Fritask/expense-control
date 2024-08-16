@@ -1,0 +1,18 @@
+@import '../../../styles.scss';
+
+.transaction-container {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid $color-platinum;
+}
+
+.transaction-value {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.cashback {
+    // color: #32CD32;
+    color: #0BDA51;
+}
